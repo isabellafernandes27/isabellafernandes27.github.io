@@ -27,14 +27,14 @@ sections.forEach(s=>observer.observe(s));
 const filterContainer = document.getElementById('filter-buttons'); // container for filter buttons
 const projectsGrid = document.getElementById('projects-grid');
 
-fetch('https://api.github.com/users/IsaFernandes22/repos')
+fetch('https://api.github.com/users/isabellafernandes27/repos')
   .then(res => res.json())
   .then(repos => {
     if(!projectsGrid) return;
     projectsGrid.innerHTML = '';
 
     // Filter out forks and website repo
-    const filteredRepos = repos.filter(r => !r.fork && r.name.toLowerCase() !== 'isafernandes22.github.io')
+    const filteredRepos = repos.filter(r => !r.fork && r.name.toLowerCase() !== 'isabellafernandes27.github.io')
       .sort((a,b)=> new Date(b.updated_at) - new Date(a.updated_at));
 
     // Collect unique languages for dynamic filter buttons
